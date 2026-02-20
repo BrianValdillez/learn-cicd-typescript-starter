@@ -17,10 +17,4 @@ describe("getAPIKey", () => {
   test("valid authorization", () => {
     expect(getAPIKey(valid_auth)).toBeTypeOf("string");
   });
-
-
-
-
-
-
 });
