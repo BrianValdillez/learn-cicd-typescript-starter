@@ -38,3 +38,6 @@ jobs:
       # gcloud builds submit --tag REGION-docker.pkg.dev/PROJECT_ID/REPOSITORY/IMAGE:TAG .
       - name: Build and Store Docker Image
         run: gcloud builds submit --tag us-central1-docker.pkg.dev/notely-488023/notely-ar-repo/brianvaldillez/notely:latest .
+
+      - name: Deploy to Cloud Run
+        run: gcloud run deploy notely --image us-central1-docker.pkg.dev/notely-488023/notely-ar-repo/brianvaldillez/notely:latest --region us-central1 --allow-unauthenticated --project notely-488023 --max-instances=4
